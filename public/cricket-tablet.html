@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Počítadlo na šipky - Cricket</title>
+<meta charset="UTF-8">	
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7286778321995508"
+     crossorigin="anonymous"></script>
+<script src="../assets/scripts/cricket.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KWEGG4M89"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-0KWEGG4M89');
+</script>
+<style>
+body {
+  background-color: #EAECEE;
+}
+table, th, td {
+  border: 0px solid black;
+  style="text-align: center; vertical-align: middle;"  
+}
+table.Skore1 {  
+  border: 0px solid white;
+  font-family: Arial, Helvetica, sans-serif;    
+}
+td.Skore1 {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;      
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  font-weight: bold;
+  width: 100px;
+}
+td.Skore1Big {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  font-size: 180px;
+  font-family: Arial, Helvetica, sans-serif;    
+  font-weight: bold;
+  width: 100px;  
+}
+td.Skore1Dark {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #F44336;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;  
+}
+td.SkoreLight {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #FFA427;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  width: 100px;  
+}
+td.SkoreEmpty {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  width: 100px;  
+}
+td.Skore1DarkB {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #FFA427;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;  
+}
+td.Skore1Left {  
+  border: 1px solid white;
+  text-align: left;
+  vertical-align: middle;  
+  color: white;
+  background-color: #F44336;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;  
+}
+table.Skore2 {  
+  border: 0px solid white;
+  font-family: Arial, Helvetica, sans-serif;        
+}
+td.Skore2 {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;      
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  font-weight: bold;
+  width: 100px;    
+}
+td.Skore2Big {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  font-size: 180px;
+  font-family: Arial, Helvetica, sans-serif;    
+  font-weight: bold;
+  width: 100px;    
+}
+td.Skore2Dark {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #4CAF50;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;
+}
+td.Skore2Left {  
+  border: 1px solid white;
+  text-align: left;
+  vertical-align: middle;  
+  color: white;
+  background-color: #4CAF50;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;    
+}
+.button {
+  background-color: #EAECEE;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;  
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 60px;
+  height: 60px;
+}
+.buttonGreen {
+  background-color: #4CAF50; 
+  opacity: 1;
+}
+.buttonGreen:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;
+}
+.buttonRed {
+  background-color: #F44336;
+  opacity: 1;  
+}
+.buttonRed20 {
+  background-color: #F44336;
+  opacity: 1;  
+}
+.buttonRed:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;  
+}
+.buttonOrange {
+  background-color: #FFA427;
+  opacity: 1;  
+}
+.buttonOrange:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;    
+}
+.buttonBlack {
+  background-color: #555555;
+  opacity: 1;  
+}
+.buttonBlack:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;  
+}
+</style>
+</head>
+<body onload="myZadejJmena()">
+<body onbeforeunload="return myNoExit()">
+<table align="center">
+  <tr>    
+    <td valign="top">
+      <table class="Skore1">
+        <tr>
+          <td></td>
+          <td class="Skore1DarkB" colspan="3" id="scoretable1h">DOMÁCÍ</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="Skore1Big" colspan="3" id="scoretable1">&nbsp</td> 
+        </tr> 
+        <tr>
+          <td></td>
+          <td class="Skore1DarkB" id="score1sipka1h">1</td>
+          <td class="Skore1Dark" id="score1sipka2h">2</td>
+          <td class="Skore1Dark" id="score1sipka3h">3</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="Skore1" id="score1sipka1">&nbsp</td>
+          <td class="Skore1" id="score1sipka2">&nbsp</td>
+          <td class="Skore1" id="score1sipka3">&nbsp</td>
+        </tr>  
+        <tr>
+          <td></td>
+          <td class="Skore1" colspan="3" id="scoretablethree1">&nbsp</td>
+        </tr>
+        <tr>          
+          <td class="Skore1Dark">20</td>
+          <td class="SkoreEmpty" id="score1sipka20_1">20</td>
+          <td class="SkoreEmpty" id="score1sipka20_2">20</td>
+          <td class="SkoreEmpty" id="score1sipka20_3">20</td>
+        </tr>  
+        <tr>
+          <td class="Skore1Dark">19</td>
+          <td class="SkoreEmpty" id="score1sipka19_1">19</td>
+          <td class="SkoreEmpty" id="score1sipka19_2">19</td>
+          <td class="SkoreEmpty" id="score1sipka19_3">19</td>          
+        </tr>  
+        <tr>
+          <td class="Skore1Dark">18</td>
+          <td class="SkoreEmpty" id="score1sipka18_1">18</td>
+          <td class="SkoreEmpty" id="score1sipka18_2">18</td>
+          <td class="SkoreEmpty" id="score1sipka18_3">18</td>
+        </tr>       
+        <tr>
+          <td class="Skore1Dark">17</td>
+          <td class="SkoreEmpty" id="score1sipka17_1">17</td>
+          <td class="SkoreEmpty" id="score1sipka17_2">17</td>
+          <td class="SkoreEmpty" id="score1sipka17_3">17</td>
+        </tr>  
+        <tr>
+          <td class="Skore1Dark">16</td>
+          <td class="SkoreEmpty" id="score1sipka16_1">16</td>
+          <td class="SkoreEmpty" id="score1sipka16_2">16</td>
+          <td class="SkoreEmpty" id="score1sipka16_3">16</td>          
+        </tr>  
+        <tr>
+          <td class="Skore1Dark">15</td>
+          <td class="SkoreEmpty" id="score1sipka15_1">15</td>
+          <td class="SkoreEmpty" id="score1sipka15_2">15</td>
+          <td class="SkoreEmpty" id="score1sipka15_3">15</td>          
+        </tr>        
+        <tr>
+          <td class="Skore1Dark">25</td>
+          <td class="SkoreEmpty" id="score1sipka25_1">25</td>
+          <td class="SkoreEmpty" id="score1sipka25_2">25</td>
+          <td class="SkoreEmpty" id="score1sipka25_3">25</td>          
+        </tr>
+        <tr>
+          <td></td>
+          <td class="Skore1Left" colspan="2">&nbspLegy</td>    
+          <td class="Skore1" id="legs1">&nbsp</td>    
+        </tr>  
+        <tr>
+          <td></td>
+          <td class="Skore1Left" colspan="2">&nbspŠipek</td>    
+          <td class="Skore1" id="darts1">&nbsp</td>    
+        </tr>  
+        <tr>
+          <td></td>
+          <td class="Skore1Left" colspan="2">&nbspPrůměr</td>    
+          <td class="Skore1" id="average1">&nbsp</td>    
+        </tr>        
+      </table>
+    </td>
+    <td width= "50px"></td> 
+    <td valign="top">
+	    <table class="Skore2">
+	      <tr>
+	        <td></td>
+	        <td class="Skore2Dark" colspan="3" id="scoretable2h">HOSTÉ</td>
+	      </tr>
+	      <tr>
+	        <td></td>
+	        <td class="Skore2Big" colspan="3" id="scoretable2">&nbsp</td> 
+	      </tr> 
+	      <tr>
+	        <td></td>
+	        <td class="Skore2Dark" id="score2sipka1h">1</td>
+	        <td class="Skore2Dark" id="score2sipka2h">2</td>
+	        <td class="Skore2Dark" id="score2sipka3h">3</td>
+	      </tr>
+	      <tr>
+	        <td></td>
+	        <td class="Skore2" id="score2sipka1">&nbsp</td>
+	        <td class="Skore2" id="score2sipka2">&nbsp</td>
+	        <td class="Skore2" id="score2sipka3">&nbsp</td>
+	      </tr>  
+	      <tr>
+	        <td></td>
+	        <td class="Skore2" colspan="3" id="scoretablethree2">&nbsp</td>
+	      </tr>
+	      <tr>          
+	        <td class="Skore2Dark">20</td>
+	        <td class="SkoreEmpty" id="score2sipka20_1">20</td>
+	        <td class="SkoreEmpty" id="score2sipka20_2">20</td>
+	        <td class="SkoreEmpty" id="score2sipka20_3">20</td>
+	      </tr>  
+	      <tr>
+	        <td class="Skore2Dark">19</td>        
+	        <td class="SkoreEmpty" id="score2sipka19_1">19</td>
+	        <td class="SkoreEmpty" id="score2sipka19_2">19</td>
+	        <td class="SkoreEmpty" id="score2sipka19_3">19</td>
+	      </tr>  
+	      <tr>
+	        <td class="Skore2Dark">18</td>
+	        <td class="SkoreEmpty" id="score2sipka18_1">18</td>
+	        <td class="SkoreEmpty" id="score2sipka18_2">18</td>
+	        <td class="SkoreEmpty" id="score2sipka18_3">18</td>
+	      </tr>       
+	      <tr>
+	        <td class="Skore2Dark">17</td>
+	        <td class="SkoreEmpty" id="score2sipka17_1">17</td>
+	        <td class="SkoreEmpty" id="score2sipka17_2">17</td>
+	        <td class="SkoreEmpty" id="score2sipka17_3">17</td>
+	      </tr>  
+	      <tr>
+	        <td class="Skore2Dark">16</td>
+	        <td class="SkoreEmpty" id="score2sipka16_1">16</td>
+	        <td class="SkoreEmpty" id="score2sipka16_2">16</td>
+	        <td class="SkoreEmpty" id="score2sipka16_3">16</td>
+	      </tr>  
+	      <tr>
+	        <td class="Skore2Dark">15</td>
+	        <td class="SkoreEmpty" id="score2sipka15_1">15</td>
+	        <td class="SkoreEmpty" id="score2sipka15_2">15</td>
+	        <td class="SkoreEmpty" id="score2sipka15_3">15</td>
+	      </tr>        
+	      <tr>
+	        <td class="Skore2Dark">25</td>
+	        <td class="SkoreEmpty" id="score2sipka25_1">25</td>
+	        <td class="SkoreEmpty" id="score2sipka25_2">25</td>
+	        <td class="SkoreEmpty" id="score2sipka25_3">25</td>
+	      </tr>
+	      <tr>
+	        <td></td>
+	        <td class="Skore2Left" colspan="2">&nbspLegy</td>    
+	        <td class="Skore2" id="legs2">&nbsp</td>    
+	      </tr>  
+	      <tr>
+	        <td></td>
+	        <td class="Skore2Left" colspan="2">&nbspŠipek</td>    
+	        <td class="Skore2" id="darts2">&nbsp</td>    
+	      </tr>  
+	      <tr>
+	        <td></td>
+	        <td class="Skore2Left" colspan="2">&nbspPrůměr</td>    
+	        <td class="Skore2" id="average2">&nbsp</td>    
+	      </tr>        
+	    </table>
+    </td>
+  </tr>  
+  <td><br></td>
+  <tr>
+    <table align="center">
+      <tr>
+        <td><button class="button buttonBlack" onclick="myBCK()"><<</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button" onclick="myCricket(0)">D5</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button buttonRed" onclick="myCricket(40)">D20</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">D1</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myFWD()">>></button></td>                
+      </tr>
+      <tr>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button" onclick="myCricket(0)">D12</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S5</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(20)">S20</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S1</button></td>
+        <td></td>
+        <td><button class="button buttonRed" onclick="myCricket(36)">D18</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>                
+      </tr>  
+      <tr>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button" onclick="myCricket(0)">D9</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S12</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T5</button></td>
+        <td><button class="button buttonRed" onclick="myCricket(60)">T20</button></td>
+        <td><button class="button" onclick="myCricket(0)">T1</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(18)">S18</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">D4</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>                
+      </tr>  
+      <tr>
+        <td><button class="button" onclick="myCricket(0)">D14</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S9</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T12</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="button buttonRed" onclick="myCricket(54)">T18</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S4</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">D13</button></td>                
+      </tr> 
+      <tr>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S14</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T9</button></td>
+        <td></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(25)">25</button></td>
+        <td></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T4</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S13</button></td>
+        <td></td>                
+      </tr>   
+      <tr>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T14</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T13</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+      </tr>
+      <tr>
+        <td><button class="button" onclick="myCricket(0)">D11</button></td>
+        <td><button class="button" onclick="myCricket(0)">S11</button></td>
+        <td><button class="button" onclick="myCricket(0)">T11</button></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(25)">25</button></td>
+        <td></td>
+        <td><button class="button buttonRed" onclick="myCricket(50)">50</button></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(25)">25</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T6</button></td>
+        <td><button class="button" onclick="myCricket(0)">S6</button></td>
+        <td><button class="button" onclick="myCricket(0)">D6</button></td>                
+      </tr>  
+      <tr>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T8</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T10</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+      </tr>    
+      <tr>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S8</button></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(48)">T16</button></td>
+        <td></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(25)">25</button></td>
+        <td></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(45)">T15</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S10</button></td>
+        <td></td>                
+      </tr>     
+      <tr>
+        <td><button class="button" onclick="myCricket(0)">D8</button></td>
+        <td></td>
+        <td><button class="button buttonOrange" onclick="myCricket(16)">S16</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T7</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">T2</button></td>
+        <td></td>
+        <td><button class="button buttonOrange" onclick="myCricket(15)">S15</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">D10</button></td>                
+      </tr>   
+      <tr>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button buttonGreen" onclick="myCricket(32)">D16</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S7</button></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(57)">T19</button></td>
+        <td><button class="button" onclick="myCricket(0)">T3</button></td>
+        <td><button class="button buttonGreen" onclick="myCricket(51)">T17</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S2</button></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(30)">D15</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>                
+      </tr>    
+      <tr>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button" onclick="myCricket(0)">D7</button></td>
+        <td></td>
+        <td><button class="button buttonOrange" onclick="myCricket(19)">S19</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">S3</button></td>
+        <td></td>
+        <td><button class="button buttonOrange" onclick="myCricket(17)">S17</button></td>
+        <td></td>
+        <td><button class="button" onclick="myCricket(0)">D2</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>                
+      </tr>    
+      <tr>
+        <td><button class="button buttonBlack" onclick="myBCK()"><<</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button buttonGreen" onclick="myCricket(38)">D19</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td><button class="button" onclick="myCricket(0)">D3</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>
+        <td><button class="button buttonGreen" onclick="myCricket(34)">D17</button></td>
+        <td><button class="button buttonBlack" onclick="myCricket(0)">0</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myFWD()">>></button></td>
+      </tr>  
+    </table>
+  </tr>
+</table>
+</body>
+</html>

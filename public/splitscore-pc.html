@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Počítadlo na šipky - Split Score</title>
+<meta charset="UTF-8">	
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7286778321995508"
+     crossorigin="anonymous"></script>
+<script src="../assets/scripts/splitscore.js"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0KWEGG4M89"></script>
+<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-0KWEGG4M89');
+</script>
+<style>
+body {
+  background-color: #EAECEE;
+}
+table, th, td {
+  border: 0px solid black;
+  style="text-align: center; vertical-align: middle;"  
+}
+table.Skore1 {  
+  border: 0px solid white;
+  font-family: Arial, Helvetica, sans-serif;    
+}
+td.Skore1 {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;      
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  font-weight: bold;
+  width: 100px;
+}
+td.Skore1Big {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  font-size: 180px;
+  font-family: Arial, Helvetica, sans-serif;    
+  font-weight: bold;
+  width: 100px;  
+}
+td.Skore1Dark {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #F44336;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;  
+}
+td.SkoreLight {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #FFA427;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  width: 100px;  
+}
+td.SkoreEmpty {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  width: 100px;  
+}
+td.Skore1DarkB {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #FFA427;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;  
+}
+td.Skore1Left {  
+  border: 1px solid white;
+  text-align: left;
+  vertical-align: middle;  
+  color: white;
+  background-color: #F44336;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;  
+}
+table.Skore2 {  
+  border: 0px solid white;
+  font-family: Arial, Helvetica, sans-serif;        
+}
+td.Skore2 {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;      
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;      
+  font-weight: bold;
+  width: 100px;    
+}
+td.Skore2Big {  
+  border: 0px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  font-size: 180px;
+  font-family: Arial, Helvetica, sans-serif;    
+  font-weight: bold;
+  width: 100px;    
+}
+td.Skore2Dark {  
+  border: 1px solid white;
+  text-align: center;
+  vertical-align: middle;    
+  color: white;  
+  background-color: #4CAF50;  
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;
+}
+td.Skore2Left {  
+  border: 1px solid white;
+  text-align: left;
+  vertical-align: middle;  
+  color: white;
+  background-color: #4CAF50;
+  font-size: 32px;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 100px;    
+}
+.button {
+  background-color: #EAECEE;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;  
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;    
+  width: 60px;
+  height: 60px;
+}
+.buttonGreen {
+  background-color: #4CAF50; 
+  opacity: 1;
+}
+.buttonGreen:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;
+}
+.buttonRed {
+  background-color: #F44336;
+  opacity: 1;  
+}
+.buttonRed20 {
+  background-color: #F44336;
+  opacity: 1;  
+}
+.buttonRed:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;  
+}
+.buttonOrange {
+  background-color: #FFA427;
+  opacity: 1;  
+}
+.buttonOrange:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;    
+}
+.buttonBlack {
+  background-color: #555555;
+  opacity: 1;  
+}
+.buttonBlack:hover {
+  font-weight: bold;
+  border: 2px solid #FFFFFF;
+  opacity: 0.5;  
+}
+</style>
+</head>
+<body onload="myZadejJmena()">
+<body onbeforeunload="return myNoExit()">
+<table align="center">
+  <tr>    
+    <td valign="top">
+      <table class="Skore1">
+        <tr>
+          <td class="Skore1DarkB" colspan="3" id="scoretable1h">DOMÁCÍ</td>
+        </tr>
+        <tr>
+          <td class="Skore1Big" colspan="3" id="scoretable1">40</td> 
+        </tr> 
+        <tr>
+          <td class="Skore1DarkB" id="score1sipka1h">1</td>
+          <td class="Skore1Dark" id="score1sipka2h">2</td>
+          <td class="Skore1Dark" id="score1sipka3h">3</td>
+        </tr>
+        <tr>
+          <td class="Skore1" id="score1sipka1">&nbsp</td>
+          <td class="Skore1" id="score1sipka2">&nbsp</td>
+          <td class="Skore1" id="score1sipka3">&nbsp</td>
+        </tr>  
+        <tr>
+          <td class="Skore1" colspan="3" id="scoretablethree1">&nbsp</td>
+        </tr>  
+        <tr>
+          <td class="Skore1Left" colspan="2">&nbspLegy</td>    
+          <td class="Skore1" id="legs1">&nbsp</td>    
+        </tr>  
+        <tr>
+          <td class="Skore1Left" colspan="2">&nbspŠipek</td>    
+          <td class="Skore1" id="darts1">&nbsp</td>    
+        </tr>  
+      </table>
+    </td>
+  <td width= "50px"></td>
+	<td valign="top">
+    <table align="center">
+      <tr>
+        <td><button class="button buttonBlack" onclick="myBCK()"><<</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd5" class="button" onclick="myOdecti(10 + 200)">D5</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd20" class="button" onclick="myOdecti(40 + 200)">D20</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>
+        <td><button id="bd1" class="button" onclick="myOdecti(2 + 200)">D1</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myFWD()">>></button></td>                
+      </tr>
+      <tr>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd12" class="button" onclick="myOdecti(24 + 200)">D12</button></td>
+        <td></td>
+        <td><button id="bs5" class="button" onclick="myOdecti(5)">S5</button></td>
+        <td></td>
+        <td><button id="bs20" class="button" onclick="myOdecti(20 + 100)">S20</button></td>
+        <td></td>
+        <td><button id="bs1" class="button" onclick="myOdecti(1)">S1</button></td>
+        <td></td>
+        <td><button id="bd18" class="button" onclick="myOdecti(36 + 200)">D18</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>                
+      </tr>  
+      <tr>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd9" class="button" onclick="myOdecti(18 + 200)">D9</button></td>
+        <td></td>
+        <td><button id="bs12" class="button" onclick="myOdecti(12)">S12</button></td>
+        <td></td>
+        <td><button id="bt5" class="button" onclick="myOdecti(15 + 300)">T5</button></td>
+        <td><button id="bt20" class="button" onclick="myOdecti(60 + 300)">T20</button></td>
+        <td><button id="bt1" class="button" onclick="myOdecti(3 + 300)">T1</button></td>
+        <td></td>
+        <td><button id="bs18" class="button" onclick="myOdecti(18 + 100)">S18</button></td>
+        <td></td>
+        <td><button id="bd4" class="button" onclick="myOdecti(8 + 200)">D4</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>                
+      </tr>  
+      <tr>
+        <td><button id="bd14" class="button" onclick="myOdecti(28 + 200)">D14</button></td>
+        <td></td>
+        <td><button id="bs9" class="button" onclick="myOdecti(9)">S9</button></td>
+        <td></td>
+        <td><button id="bt12" class="button" onclick="myOdecti(36 + 300)">T12</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button id="bt18" class="button" onclick="myOdecti(54 + 300)">T18</button></td>
+        <td></td>
+        <td><button id="bs4" class="button" onclick="myOdecti(4)">S4</button></td>
+        <td></td>
+        <td><button id="bd13" class="button" onclick="myOdecti(26 + 200)">D13</button></td>                
+      </tr> 
+      <tr>
+        <td></td>
+        <td><button id="bs14" class="button" onclick="myOdecti(14)">S14</button></td>
+        <td></td>
+        <td><button id="bt9" class="button" onclick="myOdecti(27 + 300)">T9</button></td>
+        <td></td>
+        <td></td>
+        <td><button id="b25t" class="button" onclick="myOdecti(25 + 100)">25</button></td>
+        <td></td>
+        <td></td>
+        <td><button id="bt4" class="button" onclick="myOdecti(12 + 300)">T4</button></td>
+        <td></td>
+        <td><button id="bs13" class="button" onclick="myOdecti(13)">S13</button></td>
+        <td></td>                
+      </tr>   
+      <tr>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>
+        <td><button id="bt14" class="button" onclick="myOdecti(42 + 300)">T14</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button id="bt13" class="button" onclick="myOdecti(39 + 300)">T13</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+      </tr>
+      <tr>
+        <td><button id="bd11" class="button" onclick="myOdecti(22 + 200)">D11</button></td>
+        <td><button id="bs11" class="button" onclick="myOdecti(11)">S11</button></td>
+        <td><button id="bt11" class="button" onclick="myOdecti(33 + 300)">T11</button></td>
+        <td></td>
+        <td><button id="b25l" class="button" onclick="myOdecti(25 + 100)">25</button></td>
+        <td></td>
+        <td><button id="b50" class="button" onclick="myOdecti(50 + 200)">50</button></td>
+        <td></td>
+        <td><button id="b25r" class="button" onclick="myOdecti(25 + 100)">25</button></td>
+        <td></td>
+        <td><button id="bt6" class="button" onclick="myOdecti(18 + 300)">T6</button></td>
+        <td><button id="bs6" class="button" onclick="myOdecti(6)">S6</button></td>
+        <td><button id="bd6" class="button" onclick="myOdecti(12 + 200)">D6</button></td>                
+      </tr>  
+      <tr>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>
+        <td><button id="bt8" class="button" onclick="myOdecti(24 + 300)">T8</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button id="bt10" class="button" onclick="myOdecti(30 + 300)">T10</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+      </tr>    
+      <tr>
+        <td></td>
+        <td><button id="bs8" class="button" onclick="myOdecti(8)">S8</button></td>
+        <td></td>
+        <td><button id="bt16" class="button" onclick="myOdecti(48 + 300)">T16</button></td>
+        <td></td>
+        <td></td>
+        <td><button id="b25b" class="button" onclick="myOdecti(25 + 100)">25</button></td>
+        <td></td>
+        <td></td>
+        <td><button id="bt15" class="button buttonGreen" onclick="myOdecti(45 + 300)">T15</button></td>
+        <td></td>
+        <td><button id="bs10" class="button" onclick="myOdecti(10)">S10</button></td>
+        <td></td>                
+      </tr>     
+      <tr>
+        <td><button id="bd8" class="button" onclick="myOdecti(16 + 200)">D8</button></td>
+        <td></td>
+        <td><button id="bs16" class="button" onclick="myOdecti(16 + 100)">S16</button></td>
+        <td></td>
+        <td><button id="bt7" class="button" onclick="myOdecti(21 + 300)">T7</button></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><button id="bt2" class="button" onclick="myOdecti(6 + 300)">T2</button></td>
+        <td></td>
+        <td><button id="bs15" class="button buttonOrange" onclick="myOdecti(15 + 100)">S15</button></td>
+        <td></td>
+        <td><button id="bd10" class="button" onclick="myOdecti(20 + 200)">D10</button></td>                
+      </tr>   
+      <tr>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd16" class="button" onclick="myOdecti(32 + 200)">D16</button></td>
+        <td></td>
+        <td><button id="bs7" class="button" onclick="myOdecti(7)">S7</button></td>
+        <td></td>
+        <td><button id="bt19" class="button" onclick="myOdecti(57 + 300)">T19</button></td>
+        <td><button id="bt3" class="button" onclick="myOdecti(9 + 300)">T3</button></td>
+        <td><button id="bt17" class="button" onclick="myOdecti(51 + 300)">T17</button></td>
+        <td></td>
+        <td><button id="bs2" class="button" onclick="myOdecti(2)">S2</button></td>
+        <td></td>
+        <td><button id="bd15" class="button buttonGreen" onclick="myOdecti(30 + 200)">D15</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>                
+      </tr>    
+      <tr>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd7" class="button" onclick="myOdecti(14 + 200)">D7</button></td>
+        <td></td>
+        <td><button id="bs19" class="button" onclick="myOdecti(19 + 100)">S19</button></td>
+        <td></td>
+        <td><button id="bs3" class="button" onclick="myOdecti(3)">S3</button></td>
+        <td></td>
+        <td><button id="bs17" class="button" onclick="myOdecti(17 + 100)">S17</button></td>
+        <td></td>
+        <td><button id="bd2" class="button" onclick="myOdecti(4 + 200)">D2</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>                
+      </tr>    
+      <tr>
+        <td><button class="button buttonBlack" onclick="myBCK()"><<</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd19" class="button" onclick="myOdecti(38 + 200)">D19</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td><button id="bd3" class="button" onclick="myOdecti(6 + 200)">D3</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>
+        <td><button id="bd17" class="button" onclick="myOdecti(34 + 200)">D17</button></td>
+        <td><button class="button buttonBlack" onclick="myOdecti(0)">0</button></td>
+        <td></td>
+        <td><button class="button buttonBlack" onclick="myFWD()">>></button></td>
+      </tr>  
+    </table>
+  </td>
+  <td width= "50px"></td>
+  <td valign="top">
+    <table class="Skore2">
+      <tr>
+        <td class="Skore2Dark" colspan="3" id="scoretable2h">HOSTÉ</td>
+      </tr>
+      <tr>
+        <td class="Skore2Big" colspan="3" id="scoretable2">40</td> 
+      </tr> 
+      <tr>
+        <td class="Skore2Dark" id="score2sipka1h">1</td>
+        <td class="Skore2Dark" id="score2sipka2h">2</td>
+        <td class="Skore2Dark" id="score2sipka3h">3</td>
+      </tr>        
+      <tr>
+        <td class="Skore2" id="score2sipka1">&nbsp</td>
+        <td class="Skore2" id="score2sipka2">&nbsp</td>
+        <td class="Skore2" id="score2sipka3">&nbsp</td>
+      </tr>  
+      <tr>
+        <td class="Skore2" colspan="3" id="scoretablethree2">&nbsp</td>
+      </tr>        
+      <tr>
+        <td class="Skore2Left" colspan="2">&nbspLegy</td>    
+        <td class="Skore2" id="legs2">&nbsp</td>    
+      </tr>  
+      <tr>
+        <td class="Skore2Left" colspan="2">&nbspŠipek</td>    
+        <td class="Skore2" id="darts2">&nbsp</td>    
+      </tr>  
+    </table>
+  </td>
+  </tr>
+</table>
+</body>
+</html>
